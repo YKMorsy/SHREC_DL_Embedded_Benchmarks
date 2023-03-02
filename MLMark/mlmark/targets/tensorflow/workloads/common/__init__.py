@@ -222,7 +222,7 @@ def runValidation(modelName, net, params):
 	# For debugging
 	tmpdir = tempfile.mkdtemp()
 	outputFn = os.path.join(tmpdir, 'outputs.json')
-	with open(outputFn, 'w') as fp:
+	with open("/home/odroid/Desktop/yasser/SHREC_DL_Embedded_Benchmarks/outputs.json", 'w') as fp:
 		json.dump(results, fp)
 	log.debug('Validation output file is {}'.format(outputFn))
 	return results

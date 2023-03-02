@@ -219,8 +219,9 @@ def runValidation(modelName, net, params):
 	outputFn = os.path.join(tmpdir, 'outputs.json')
 	with open(outputFn, 'w') as fp:
 		json.dump(results, fp)
-	log.debug('Validation output file is {}'.format(outputFn))
-	print(results)
+	print(outputFn)	
+	#log.debug('Validation output file is {}'.format(outputFn))
+	#print(results)
 	return results
 
 # Need to validate parameters before creating the network
