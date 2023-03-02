@@ -172,6 +172,7 @@ def run(modelName, modelFileName, params):
 		inputFn,
 		outputFn
 	]
+	print(cmd[0])
 	log.info('Running prediction...')
 	log.debug(cmd)
 	ret = subprocess.call(cmd)

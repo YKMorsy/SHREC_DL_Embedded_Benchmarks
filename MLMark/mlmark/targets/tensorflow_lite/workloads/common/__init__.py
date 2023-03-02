@@ -188,7 +188,9 @@ def runValidation(modelName, net, params):
 	Note: This function returns its value upstream to the harness through the
 	apiRun() API function. It is only an example, apiRun() can be implemented
 	however a developer chooses.'''
+	print("running validation")	
 	imageFiles = getter.apiGetValidationInputs(modelName)
+	print("getting image files")	
 	imageData = []
 	# Results will be accumulate here
 	results = []
@@ -218,7 +220,7 @@ def runValidation(modelName, net, params):
 	with open(outputFn, 'w') as fp:
 		json.dump(results, fp)
 	log.debug('Validation output file is {}'.format(outputFn))
-	#print(results)
+	print(results)
 	return results
 
 # Need to validate parameters before creating the network

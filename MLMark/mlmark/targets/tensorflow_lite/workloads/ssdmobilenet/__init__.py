@@ -25,7 +25,9 @@ def apiRun(params):
 		return None, None
 	if params[const.PRECISION] == const.FP32:
 		net = SsdMobileNet(os.path.join(paths.MODELS, 'tensorflow_lite', model, 'converted_model.tflite'),params[const.HARDWARE])
+		print("created ssdmobilenet obj")
 		return params, common.run(model, net, params)
+
 	if params[const.PRECISION] == const.INT8:
 		net = SsdMobileNet(os.path.join(paths.MODELS, 'tensorflow_lite_quantised', model, 'quantised_PTIQ.tflite'),params[const.HARDWARE])
 		return params, common.run(model, net, params)

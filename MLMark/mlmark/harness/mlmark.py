@@ -63,7 +63,9 @@ def runTask(task):
 	log.info("Task: Target '%s', Workload '%s'" % (task['target'], task['workload']))
 	for k, v in sorted(task['params'].items()):
 		log.info("    %-20s : %s" % (k, v))
+	print(task['params'])
 	finalParams,results = pkg.apiRun(task['params'])
+	print("finished apirun")
 	# Now cleanup. First, remove the search path
 	sys.path.remove(pkgDir)
 	# ...second, delete every module that was loaded from the search path

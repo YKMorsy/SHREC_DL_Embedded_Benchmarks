@@ -108,7 +108,7 @@ def calcMap(mi, results):
 			conf = det['score']
 			bbox = det['box']
 			# Enforce the >=30% confidence rule for mAP
-			if conf >= 0.30:
+			if float(conf) >= 0.30:
 				detectedObjects[catId].append((conf, bbox, imgId))
 
 	# For each category of detections, order them by confidence score
@@ -136,10 +136,10 @@ def calcMap(mi, results):
 				w = int(imgInfo[0]['width'])
 				# Translate the normalized coords to image coords
 				txbbox = []
-				txbbox.append(box[0] * w)
-				txbbox.append(box[1] * h)
-				txbbox.append(box[2] * w)
-				txbbox.append(box[3] * h)
+				txbbox.append(float(box[0]) * w)
+				txbbox.append(float(box[1]) * h)
+				txbbox.append(float(box[2]) * w)
+				txbbox.append(float(box[3]) * h)
 				# Wow, do an O(n) check of IOU (TODO is there a faster way?)
 				iouPass = False
 				# Only use annotations from this image
@@ -150,10 +150,10 @@ def calcMap(mi, results):
 				for ann in anns:
 					abbox = []
 					# COCO bboxes are in the form [x0, y0, w, h], convert:
-					abbox.append(ann['bbox'][0])
-					abbox.append(ann['bbox'][1])
-					abbox.append(ann['bbox'][2] + ann['bbox'][0])
-					abbox.append(ann['bbox'][3] + ann['bbox'][1])
+					abbox.append(float(ann['bbox'][0]))
+					abbox.append(float(ann['bbox'][1]))
+					abbox.append(float(ann['bbox'][2]) + float(ann['bbox'][0]))
+					abbox.append(float(ann['bbox'][3]) + float(ann['bbox'][1]))
 					iou = getIou(txbbox, abbox)
 					if iou >= thresh:
 						iouPass = True

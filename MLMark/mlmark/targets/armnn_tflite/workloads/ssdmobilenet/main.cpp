@@ -187,6 +187,7 @@ void runBatchInference(vector<string> &filenames) {
       *network, {armnn::Compute::CpuAcc, armnn::Compute::CpuRef},
       runtime->GetDeviceSpec(), oopts,
       armnn::Optional<std::vector<std::string> &>(errorMessages));
+cout << "Finished Optimization" << endl;
   LogErrorMessages(errorMessages);
 
   armnn::NetworkId networkIdentifier;
@@ -481,6 +482,15 @@ int main(int argc, char *argv[]) {
     cerr << "Arguments: <input JSON> <output JSON>" << endl;
     return 1;
   }
+
+  string arg0 = argv[0];
+  string arg1 = argv[1];
+  string arg2 = argv[2];
+
+  LogErrorMessages(arg0);
+  LogErrorMessages(arg1);
+  LogErrorMessages(arg2);
+
   string input_json_filename = argv[1];
   string output_json_filename = argv[2];
 
