@@ -4,10 +4,14 @@ group: TinyMLPerf (https://github.com/mlcommons/tiny)
 
 image classification on cifar10
 
-tflite_test.py: converted models performances on cifar10 test set
+
+
+
+
+lite_test.py: converted models performances on cifar10 test set
 '''
 
-import tensorflow as tf
+from tflite_runtime.interpreter import Interpreter
 import numpy as np
 import h5py
 import os
@@ -34,7 +38,7 @@ else:
 
 if __name__ == '__main__':
     # Load the TFLite model and allocate tensors.
-    interpreter = tf.lite.Interpreter(model_path=model_path)
+    interpreter = Interpreter(model_path=model_path)
     interpreter.allocate_tensors()
 
     # Get input and output tensors.
