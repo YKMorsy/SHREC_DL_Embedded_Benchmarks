@@ -74,6 +74,9 @@ def calculate_auc(y_pred, labels, classes, name):
     # get number of positive and negative examples in the dataset
     for class_item in range(n_classes):
         # Sum of all true positive answers
+        print(labels)
+        print("-----")
+        print(class_item)
         all_positives = sum(labels == class_item)
         # Sum of all true negative answers
         all_negatives = len(labels) - all_positives
