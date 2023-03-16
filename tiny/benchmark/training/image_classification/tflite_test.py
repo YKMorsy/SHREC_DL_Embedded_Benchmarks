@@ -18,7 +18,7 @@ import os
 import sys
 import train
 import eval_functions_eembc
-from sklearn.metrics import roc_auc_score
+# from sklearn.metrics import roc_auc_score
 import keras_model
 
 np.set_printoptions(threshold=sys.maxsize)
@@ -78,10 +78,10 @@ if __name__ == '__main__':
     accuracy_eembc = eval_functions_eembc.calculate_accuracy(predictions, label_classes)
     print("---------------------")
 
-    auc_scikit = roc_auc_score(test_labels, predictions)
-    print("sklearn.metrics.roc_auc_score method")
-    print("AUC sklearn: ", auc_scikit)
-    print("---------------------")
+#     auc_scikit = roc_auc_score(test_labels, predictions)
+#     print("sklearn.metrics.roc_auc_score method")
+#     print("AUC sklearn: ", auc_scikit)
+#     print("---------------------")
 
     print("EEMBC calculate_auc method")
     auc_eembc = eval_functions_eembc.calculate_auc(predictions, label_classes, label_names, model_path)
