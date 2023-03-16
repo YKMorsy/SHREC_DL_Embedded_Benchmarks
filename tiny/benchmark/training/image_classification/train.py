@@ -10,7 +10,7 @@ train.py desc: loads data, trains and saves model, plots training metrics
 import numpy as np
 # import matplotlib.pyplot as plt
 import pickle
-from sklearn.preprocessing import LabelEncoder
+import pandas as pd
 # import tensorflow as tf
 # from tensorflow.keras.callbacks import LearningRateScheduler
 # from tensorflow.keras.utils import to_categorical
@@ -122,9 +122,8 @@ def load_cifar_10_data(data_dir, negatives=False):
 #     return cifar_train_data, cifar_train_filenames, to_categorical(cifar_train_labels), \
 #         cifar_test_data, cifar_test_filenames, to_categorical(cifar_test_labels), cifar_label_names
 
-    le = LabelEncoder()
-    cifar_train_labels = le.fit_transform(cifar_train_labels)
-    cifar_test_labels = le.fit_transform(cifar_test_labels)
+    cifar_train_labels = pd.Categorical(cifar_train_labels)
+    cifar_test_labels = pd.Categorical(cifar_test_labels)
 
     return cifar_train_data, cifar_train_filenames, (cifar_train_labels), \
         cifar_test_data, cifar_test_filenames, (cifar_test_labels), cifar_label_names
