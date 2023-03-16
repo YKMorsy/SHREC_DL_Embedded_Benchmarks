@@ -19,7 +19,7 @@ import sys
 import train
 import eval_functions_eembc
 # from sklearn.metrics import roc_auc_score
-import keras_model
+# import keras_model
 
 np.set_printoptions(threshold=sys.maxsize)
 
@@ -30,10 +30,12 @@ PERF_SAMPLE = True
 QUANT_MODEL = True
 
 if QUANT_MODEL:
-    _name = keras_model.get_quant_model_name()
+#     _name = keras_model.get_quant_model_name()
+    _name = pretrainedResnet
     model_path = 'trained_models/' + _name + '_quant.tflite'
 else:
-    _name = keras_model.get_quant_model_name()
+#     _name = keras_model.get_quant_model_name()
+    _name = pretrainedResnet
     model_path = 'trained_models/' + _name + '.tflite'
 
 if __name__ == '__main__':
