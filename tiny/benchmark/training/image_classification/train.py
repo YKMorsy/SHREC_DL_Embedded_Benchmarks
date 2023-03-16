@@ -121,9 +121,11 @@ def load_cifar_10_data(data_dir, negatives=False):
 
 #     return cifar_train_data, cifar_train_filenames, to_categorical(cifar_train_labels), \
 #         cifar_test_data, cifar_test_filenames, to_categorical(cifar_test_labels), cifar_label_names
-
+    
+    print("start categorical")
     cifar_train_labels = pd.Categorical(cifar_train_labels)
     cifar_test_labels = pd.Categorical(cifar_test_labels)
+    print("end categorical")
 
     return cifar_train_data, cifar_train_filenames, (cifar_train_labels), \
         cifar_test_data, cifar_test_filenames, (cifar_test_labels), cifar_label_names
