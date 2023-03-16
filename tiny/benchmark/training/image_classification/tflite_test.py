@@ -61,7 +61,7 @@ if __name__ == '__main__':
     print(test_labels.categories)
     print("perf samples")
 
-    label_classes = np.argmax(test_labels.categories)
+    label_classes = (test_labels.categories)
     print("Label classes: ", label_classes.shape)
 
     if QUANT_MODEL:
