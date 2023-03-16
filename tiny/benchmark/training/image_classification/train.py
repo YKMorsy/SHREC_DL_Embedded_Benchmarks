@@ -8,12 +8,12 @@ train.py desc: loads data, trains and saves model, plots training metrics
 '''
 
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import pickle
-import tensorflow as tf
-from tensorflow.keras.callbacks import LearningRateScheduler
-from tensorflow.keras.utils import to_categorical
-import keras_model
+# import tensorflow as tf
+# from tensorflow.keras.callbacks import LearningRateScheduler
+# from tensorflow.keras.utils import to_categorical
+# import keras_model
 
 import datetime
 
