@@ -13,7 +13,7 @@ lite_test.py: converted models performances on cifar10 test set
 
 from tflite_runtime.interpreter import Interpreter
 import numpy as np
-import h5py
+#import h5py
 import os
 import sys
 import train
