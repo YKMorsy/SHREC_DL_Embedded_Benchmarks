@@ -58,10 +58,10 @@ if __name__ == '__main__':
         test_labels = test_labels[_idxs]
         test_filenames = test_filenames[_idxs]
         
-    print(test_labels)
+    print(test_labels.Categories)
     print("perf samples")
 
-    label_classes = np.argmax(test_labels, axis=1)
+    label_classes = np.argmax(test_labels.Categories)
     print("Label classes: ", label_classes.shape)
 
     if QUANT_MODEL:
