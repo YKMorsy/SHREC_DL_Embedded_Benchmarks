@@ -57,6 +57,9 @@ if __name__ == '__main__':
         test_imgs = test_imgs[_idxs]
         test_labels = test_labels[_idxs]
         test_filenames = test_filenames[_idxs]
+        
+    print(test_labels)
+    print("perf samples")
 
     label_classes = np.argmax(test_labels, axis=1)
     print("Label classes: ", label_classes.shape)
@@ -66,6 +69,8 @@ if __name__ == '__main__':
         test_imgs = test_imgs.astype(np.int8)
     else:
         test_imgs = test_imgs.astype(np.float32)
+        
+    print("quant model")
 
     predictions = []
     for img in test_imgs:
