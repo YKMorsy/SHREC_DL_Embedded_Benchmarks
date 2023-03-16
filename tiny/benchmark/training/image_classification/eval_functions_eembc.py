@@ -11,7 +11,7 @@ https://github.com/SiliconLabs/platform_ml_models/blob/master/eembc/Methodology/
 '''
 
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 
 # Classifier overall accuracy calculation
@@ -107,18 +107,18 @@ def calculate_auc(y_pred, labels, classes, name):
     roc_auc_avg = np.mean(roc_auc)
     print(f"Simplified average roc_auc = {roc_auc_avg:.3f}")
 
-    plt.figure()
-    for class_item in range(n_classes):
-        plt.plot(fpr[class_item, :], tpr[class_item, :],
-                 label=f"auc: {roc_auc[class_item]:0.3f} ({classes[class_item]})")
-    plt.xlim([0.0, 0.1])
-    plt.ylim([0.5, 1.0])
-    plt.legend(loc="lower right")
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('ROC: ' + name)
-    plt.grid(which='major')
-    plt.show(block=False)
+#     plt.figure()
+#     for class_item in range(n_classes):
+#         plt.plot(fpr[class_item, :], tpr[class_item, :],
+#                  label=f"auc: {roc_auc[class_item]:0.3f} ({classes[class_item]})")
+#     plt.xlim([0.0, 0.1])
+#     plt.ylim([0.5, 1.0])
+#     plt.legend(loc="lower right")
+#     plt.xlabel('False Positive Rate')
+#     plt.ylabel('True Positive Rate')
+#     plt.title('ROC: ' + name)
+#     plt.grid(which='major')
+#     plt.show(block=False)
 
     return roc_auc
 
