@@ -20,10 +20,11 @@ import sys
 import numpy
 # from import
 from tqdm import tqdm
-from sklearn import metrics
+#from sklearn import metrics
 # original lib
 import common as com
-import tensorflow as tf
+#import tensorflow as tf
+from tflite_runtime.interpreter import Interpreter
 ########################################################################
 
 
@@ -167,5 +168,5 @@ if __name__ == "__main__":
                 result=param["result_directory"],
                 model_postfix=model_postfix,
                 file_name=param["result_file"])
-            com.logger.info("AUC and pAUC results -> {}".format(result_path))
-            com.save_csv(save_file_path=result_path, save_data=csv_lines)
+            #com.logger.info("AUC and pAUC results -> {}".format(result_path))
+            #com.save_csv(save_file_path=result_path, save_data=csv_lines)
