@@ -1,4 +1,4 @@
-import tensorflow as tf
+from tflite_runtime.interpreter import Interpreter
 import os
 import numpy as np
 import argparse
@@ -32,7 +32,7 @@ if __name__ == '__main__':
   Flags, unparsed = kws_util.parse_command()
   ds_train, ds_test, ds_val = kws_data.get_training_data(Flags)
   
-  interpreter = tf.lite.Interpreter(model_path=Flags.tfl_file_name)
+  interpreter = Interpreter(model_path=Flags.tfl_file_name)
   interpreter.allocate_tensors()
   input_details = interpreter.get_input_details()
   output_details = interpreter.get_output_details()
